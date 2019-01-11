@@ -1,0 +1,41 @@
+<h1 style="text-align: center;">Welcome to Django - Angular - Integration - Client View</h1>
+
+
+<table border="1" style="border-collapse: collapse; width: 100%; text-align: center;">
+  <thead>
+  <tr>
+    <td><h3>ID</h3></td>
+    <td><h3>Fullname</h3></td>
+    <td><h3>Date Of Birth</h3></td>
+    <td><h3>Email</h3></td>
+    <td><h3>Phone</h3></td>
+  </tr>
+  </thead>
+  <tbody>
+  <ng-container *ngFor = "let contact of data">
+  <tr>
+    <td><h4> {{ contact.id }}</h4></td>
+    <td><h4> {{ contact.FullName }}</h4></td>
+    <td><h4> {{ contact.DateOfBirth }}</h4></td>
+    <td><h4> {{ contact.Email }}</h4></td>
+    <td><h4> {{ contact.Phone }}</h4></td>
+  </tr>
+  </ng-container>
+  </tbody>
+</table>
+
+<br>
+<br>
+<br>
+<br>
+
+<div class="container">
+  <form #form="ngForm" (submit)="someFunction(form.value)">
+    <input class="form-control" id="name" type="text" name="name" placeholder="Enter Full Name : " required [(ngModel)]="name" ng-minlength="4" ng-maxlength="12" >
+     <br>
+    <input id="age" type="date" name="date" placeholder="Enter Date : " [(ngModel)]="date"><br>
+    <input id="email" type="text" name="email" placeholder="Enter Email : "[(ngModel)]="email"><br>
+    <input id="phone" type="text" name="phone" placeholder="Enter Phone : "[(ngModel)]="phone"><br><br>
+    <input type="submit">
+  </form>
+</div>
